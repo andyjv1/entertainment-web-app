@@ -613,8 +613,8 @@ background: transparent;
 
 .trending,
 .moviestv {
-  width: calc(100% - 2rem);
-}
+    width: calc(100% - 2rem);
+    margin: 0 auto;}
 
 .trending__list {
   overflow: auto;
@@ -819,7 +819,7 @@ background: transparent;
   flex-direction: column;
 }
 
-.bookmarked, .bookmarked > .moviestv {
+.bookmarked {
   width: 100%;
 }
 
