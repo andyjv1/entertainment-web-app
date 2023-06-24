@@ -147,7 +147,7 @@ const NewUserForm = () => {
     navigate(`/login`)
   }
 
-  if (isLoading2) return <PulseLoader color={"#FFF"} />
+  if (isLoading2 || isLoading) return <PulseLoader color={"#FFF"} />
 
   const content = (
     <>
