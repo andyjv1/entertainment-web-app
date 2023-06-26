@@ -7,7 +7,6 @@ import { setCredentials } from '../auth/authSlice'
 import { useLoginMutation } from '../auth/authApiSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
-import PulseLoader from 'react-spinners/PulseLoader'
 import useTitle from '../hooks/useTitle'
 
 const NewUserForm = () => {
@@ -107,7 +106,6 @@ const NewUserForm = () => {
     if (canSave) {
       await addNewUser({ username, password, image })
     }
-
   }
 
   // Function to check for input errors
@@ -147,7 +145,7 @@ const NewUserForm = () => {
     navigate(`/login`)
   }
 
-  if (isLoading2) return <PulseLoader color={"#FFF"} />
+  if (isLoading || isLoading2) return <p className='white'>Loading...</p>
 
   const content = (
     <>
@@ -205,6 +203,8 @@ const NewUserForm = () => {
 
           <button type='submit'
             onClick={onSaveUserClickedError}
+            style={{ backgroundColor: !canSave ? "grey" : null }}
+            disabled={!canSave}
           >Create an account</button>
           <p>Already have an account? <span onClick={goToLogin}
           >Login</span></p>
