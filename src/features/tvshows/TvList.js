@@ -29,7 +29,7 @@ const TvList = () => {
 
   let content
 
-  if (isLoading || isLoading2) content = <p>Loading...</p>
+  if (isLoading || isLoading2) content = <p className='white'>Loading...</p>
 
   if (isError || isError2) {
     content = <p className="errmsg">{error?.data?.message} {error2?.data?.message}</p>
