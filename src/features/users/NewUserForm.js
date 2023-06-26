@@ -145,7 +145,7 @@ const NewUserForm = () => {
     navigate(`/login`)
   }
 
-  if (isLoading || isLoading2) return <p className='white'>Loading...</p>
+  if (isLoading || isLoading2) return <p>Loading...</p>
 
   const content = (
     <>
