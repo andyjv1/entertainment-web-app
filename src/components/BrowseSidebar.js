@@ -45,14 +45,15 @@ const BrowseSidebar = ({ location }) => {
       cloudName: "da4z2qeze"
     }
   });
-
   const myImage = cld.image(picture);
 
   picture ? avatarImage = (<AdvancedImage cldImg={myImage} />) : avatarImage = (<FontAwesomeIcon icon={faUser} />)
 
   useEffect(() => {
+    console.log(`isSuccess:${isSuccess}`);
     if (isSuccess) navigate('/')
   }, [isSuccess, navigate])
+
   
   if (isLoading) return <p>Logging Out...</p>
 
