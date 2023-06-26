@@ -50,7 +50,6 @@ const BrowseSidebar = ({ location }) => {
   picture ? avatarImage = (<AdvancedImage cldImg={myImage} />) : avatarImage = (<FontAwesomeIcon icon={faUser} />)
 
   useEffect(() => {
-    console.log(`isSuccess:${isSuccess}`);
     if (isSuccess) navigate('/')
   }, [isSuccess, navigate])
 
