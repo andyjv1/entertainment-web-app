@@ -6,7 +6,6 @@ import { setCredentials } from './authSlice'
 import { useLoginMutation } from './authApiSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons"
-import PulseLoader from 'react-spinners/PulseLoader'
 import useTitle from '../hooks/useTitle'
 
 
@@ -71,7 +70,7 @@ const Login = () => {
     }
   }
 
-    if (isLoading) return <PulseLoader color={"#FFF"} />
+  if (isLoading) return <p>Loading...</p>
 
   const content = (
     <div className='login' onSubmit={handleSubmit}>
