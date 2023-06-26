@@ -27,11 +27,8 @@ const PersistLogin = () => {
         if (effectRan.current === true || process.env.NODE_ENV !== 'development') { // React 18 Strict Mode
 
             const verifyRefreshToken = async () => {
-                console.log('verifying refresh token')
                 try {
-                    //const response = 
                     await refresh()
-                    //const { accessToken } = response.data
                     setTrueSuccess(true)
                 }
                 catch (err) {
@@ -44,23 +41,18 @@ const PersistLogin = () => {
 
         return () => effectRan.current = true
 
-        // eslint-disable-next-line
     }, [])
 
 
     let content
-    if (isLoading) { //persist: yes, token: no
-        console.log('loading')
+    if (isLoading) { 
         content = <p>Loading...</p>
-    } else if (isError) { //persist: yes, token: no
+    } else if (isError) { 
         console.log(error.data?.message);
         navigate(`/login`)
-    } else if (isSuccess && trueSuccess) { //persist: yes, token: yes
-        console.log('success')
+    } else if (isSuccess && trueSuccess) {
         content = <Outlet />
-    } else if (token && isUninitialized) { //persist: yes, token: yes
-        console.log('token and uninit')
-        console.log(isUninitialized)
+    } else if (token && isUninitialized) {
         content = <Outlet />
     }
 
